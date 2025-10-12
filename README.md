@@ -1,4 +1,3 @@
-# comment-generator
 # 🧩 Claim Analyzer Web App (v3.1)
 
 A responsive, theme-based tool for analyzing medical claim and CPT code data.  
@@ -9,7 +8,7 @@ Designed for billing teams to manage and verify claims efficiently — now with 
 ## 🌐 Live Demo
 Once deployed with GitHub Pages, your project will be live at:
 
-👉 **https://YOUR_USERNAME.github.io/claim-analyzer/**
+👉 **https://Amr0122.github.io/comment-generator/**
 
 *(Replace YOUR_USERNAME with your GitHub username)*
 
@@ -34,3 +33,10 @@ Once deployed with GitHub Pages, your project will be live at:
 ---
 
 ## 🧱 Folder Structure
+------------------------------------------------------------------------------------------
+project-folder/
+│
+├── index.html
+├── style.css
+├── script.js
+├── /assets # images, icons, etc.
