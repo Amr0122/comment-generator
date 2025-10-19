@@ -1,0 +1,124 @@
+<!-- Comment Generator v3.2 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Arkansas Medical Billing - Comment Generator v3.2</title>
+
+  <!-- favicon -->
+  <link rel="icon" type="image/x-icon" href="medical_icon.ico">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css?v=1" />
+</head>
+<body class="dark-mode">
+  <!-- Header with subtle light overlay (the light effect) -->
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="logo-section">
+        <!-- Theme logo (swapped by JS) -->
+        <img id="themeLogo" src="arkansas_logo.png" alt="Logo" class="logo" />
+        <h1 class="site-title">Comment Generator Tool</h1>
+      </div>
+
+      <!-- Theme Toggle -->
+      <div class="controls">
+        <button id="themeToggle" class="theme-btn" aria-pressed="true">Switch to Light Mode</button>
+      </div>
+    </div>
+
+    <!-- soft light/glow effect under header -->
+    <div class="header-light" aria-hidden="true"></div>
+  </header>
+
+  <main>
+    <!-- LEFT: Form -->
+    <section class="form-section">
+      <h2>Enter Claim Details</h2>
+
+      <label for="payer">Payer:</label>
+      <input id="payer" type="text" placeholder="e.g., BCBS, UHC" />
+
+      <label for="claimStatus">Claim Status:</label>
+      <select id="claimStatus">
+        <option value="">-- Select Claim Status --</option>
+        <option value="Processed as Primary">Processed as Primary</option>
+        <option value="Processed as Secondary">Processed as Secondary</option>
+        <option value="In Process">In Process</option>
+        <option value="Re-Submit">Re-Submit</option>
+      </select>
+
+      <label for="issueType">Issue Type:</label>
+      <select id="issueType" onchange="toggleIssueFields()">
+        <option value="CPT Denied">CPT Denied</option>
+        <option value="Claim Denied">Claim Denied</option>
+        <option value="Overpayment">Overpayment</option>
+        <option value="Reversal">Reversal</option>
+        <option value="Other">Other</option>
+      </select>
+
+      <!-- Expanded issue field: textarea (resizable min/max like outcome) -->
+      <div id="issueExtraField">
+        <textarea id="extraIssue" placeholder="Enter CPT code(s) or Claim number(s)" rows="2"></textarea>
+      </div>
+
+      <label for="actionTaken">Action Taken:</label>
+      <select id="actionTaken" onchange="toggleActionFields()">
+        <!-- Keep all old values + new ones, but removed 'Submitted manually' & 'Resubmitted via Portal' as requested -->
+        <option value="Added modifier">Added modifier</option>
+        <option value="Rematch ICD">Rematch ICD</option>
+        <option value="Call">Call</option>
+        <option value="Reconsideration">Reconsideration</option>
+        <option value="Appeal">Appeal</option>
+        <!-- removed: Resubmitted via Portal -->
+        <!-- removed: Submitted manually -->
+        <!-- standardized/additional submitted variations -->
+        <option value="Submitted">Submitted</option>
+        <option value="Re-submitted on Portal">Re-submitted on Portal</option>
+        <option value="MR-Submitted">MR-Submitted</option>
+        <option value="QTC">QTC</option>
+        <option value="Other">Other</option>
+      </select>
+
+      <!-- container for action conditional fields (ref#, rep etc) -->
+      <div id="actionExtraFields"></div>
+
+      <label for="outcome">Outcome:</label>
+      <textarea id="outcome" placeholder="e.g., Claim resubmitted successfully. Status: Paid." rows="4"></textarea>
+
+      <label for="claimId">Claim ID:</label>
+      <input id="claimId" type="text" placeholder="Optional: Claim ID (e.g., 5925272003044)" />
+
+      <label for="by">By:</label>
+      <input id="by" type="text" placeholder="Your initials (e.g., OA)" />
+
+      <button id="generateBtn" class="primary-btn">Generate Comment</button>
+    </section>
+
+    <!-- RIGHT: Output + History -->
+    <aside class="right-column">
+      <section class="output-section">
+        <h2>Generated Comment</h2>
+        <textarea id="generatedComment" readonly></textarea>
+        <div class="btn-row">
+          <button id="copyBtn" class="secondary-btn">Copy</button>
+          <button id="clearBtn" class="secondary-btn">Clear</button>
+        </div>
+      </section>
+
+      <section class="history-section">
+        <h2>History (Last 10)</h2>
+        <ul id="historyList" aria-live="polite"></ul>
+        <button id="clearHistoryBtn" class="secondary-btn">Clear History</button>
+      </section>
+    </aside>
+  </main>
+
+  <footer>
+    <p>© 2025 Arkansas Medical Billing — Comment Generator v3.2</p>
+  </footer>
+
+  <script src="script.js?v=3.2"></script>
+</body>
+</html>
