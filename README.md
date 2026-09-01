@@ -1,4 +1,4 @@
-# 🧩 Claim Analyzer Web App (v4.0.0)
+# 🧩 Claim Analyzer Web App (v5.0.0)
 
 A responsive, theme-based tool for analyzing medical claim and CPT code data.  
 Designed for billing teams to manage and verify claims efficiently — now with dark and light mode support.
